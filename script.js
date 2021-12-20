@@ -1,4 +1,6 @@
 import { getData } from "./data.js";
 
 const data = getData();
-console.log(data)
+console.log(data);
+
+

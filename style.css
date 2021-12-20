@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 100%;
+  /* font-family: 'Playfair Display', serif;  TO BE USED IN TITLES  */
+}
+
+.top1 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5%;
+  background-color: black;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.top1 a {
+  color: white;
+  font-size: 0.75rem;
+  margin: 0 10px;
+}
+header {
+  background-image: url("https://asset.swarovski.com/images/dpr_auto,f_auto,q_auto/c_crop,g_xy_center,w_7093,h_3990,x_4039,y_1995/w_1920,h_880,c_fill/swa-cms/B2C_BRAND_VISUAL-HOLIDAY-DECO-TREE-2_SL_GL_300DPI_RGB/B2C_BRAND_VISUAL-HOLIDAY-DECO-TREE-2_SL_GL_300DPI_RGB.tif_GL_TT_HP_LD.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  color: white;
+  position: absolute;
+  width: 100%;
+}
+
+header:before {
+  content: "";
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(black, transparent);
+}
+
+.top2 {
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  padding: 5px 30px;
+  background-color: black;
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+.top3 {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 10%;
+  justify-content: space-between;
+  color: white;
+  padding: 0 10px;
+}
+
+.top3-left,
+.top3-right {
+  display: flex;
+  width: 30%;
+  padding: 0 20px;
+}
+
+.top3-left {
+  justify-content: flex-start;
+}
+
+.top3-right {
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+.top3-left p,
+.top3-right p {
+  font-size: 0.9rem;
+  padding: 0 10px;
+}
+.logo-container {
+  position: absolute;
+  width: 100%;
+  top: 15%;
+  padding: 0 30px;
+}
+.logo {
+  width: 95%;
+}
+
+nav {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  color: white;
+}
+
+nav ul li:hover {
+  border-bottom: 3px solid white;
+}
+
+/* HOVER ON HOVER-CONTAINER IS NOT WORKING, FIX IT IF YOU CAN */
+.hover-container:hover {
+  background-color: beige !important;
+  z-index: 100;
+}
+
+section {
+  position: absolute;
+  top: 91%;
+  width: 100%;
+  height: 17rem;
+  background-color: rgb(222, 221, 214);
+  padding: 20px;
+  text-align: center;
+}
+section h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  letter-spacing: 7px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 950px) {
+  .top2,
+  .top3 {
+    display: none;
+  }
+}
