@@ -161,7 +161,7 @@ section h1 {
 
 .dropdown-content {
   display: none; 
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   position: absolute;
   color: black;
