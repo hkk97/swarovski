@@ -1,15 +1,27 @@
 // parsed data from the site:
 // https://www.swarovski.com/en-US/c-0202/Categories/Watches/All-watches/?sort=newIn&page=2&loadMore=true&show=All
 //
+// const data = [];
 // document.getElementsByClassName("swa-product-tile").forEach(function (el)  {
 //     const nameArr = el.firstElementChild.firstElementChild.title.split(", ")
+//     let name = nameArr[0];
+//     let bracelet = nameArr[1];
+//     let color = nameArr[2];
+//     let dial, id;
+//     if(nameArr.length === 5) {
+//         dial = nameArr[3];
+//         id = nameArr[4];
+//     } else {
+//         dial = '';
+//         id = nameArr[3];
+//     }
 //     data.push(
 //         {
-//             name: nameArr[0],
-//             bracelet: nameArr[1],
-//             color: nameArr[2],
-//             dial: nameArr[3],
-//             id: nameArr[4],
+//             name: name,
+//             bracelet: bracelet,
+//             color: color,
+//             dial: dial,
+//             id: ,
 //             imageSrc: el.firstElementChild.firstElementChild.src,
 //             price: el.firstElementChild.getAttribute("data-gtm-product-price"),
 //             isInStock: !el.firstElementChild.lastElementChild.className.includes("notify-me")
@@ -47,7 +59,7 @@ export const getData = () => {
       bracelet: "Moon",
       color: "Leather strap",
       dial: "Blue",
-      id: "Stainless steel - Swarovski",
+      id: "5516305",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_1.0,f_auto,w_500/5516305_png/octea-lux-%E8%85%95%E8%A1%A8--%E6%9C%88%E4%BA%AE--%E7%9C%9F%E7%9A%AE%E8%A1%A8%E5%B8%A6--%E8%93%9D%E8%89%B2--%E4%B8%8D%E9%94%88%E9%92%A2-swarovski-5516305.png",
       price: "379.00",
@@ -277,7 +289,8 @@ export const getData = () => {
       name: "Octea Lux Sport watch",
       bracelet: "Metal bracelet",
       color: "Blue PVD - Swarovski",
-      dial: "5610475",
+      dial: "",
+      id: "5610475"
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_1.0,f_auto,w_500/5610475_png/octea-lux-sport-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E8%93%9D%E8%89%B2-pvd-swarovski-5610475.png",
       price: "429.00",
@@ -309,7 +322,8 @@ export const getData = () => {
       name: "Octea Lux Sport watch",
       bracelet: "Metal bracelet",
       color: "Black PVD - Swarovski",
-      dial: "5610472",
+      dial: "Black PVD",
+      id: "5610472"
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_1.0,f_auto,w_500/5610472_png/octea-lux-sport-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E9%BB%91%E8%89%B2-pvd-%E7%94%B5%E9%95%80-swarovski-5610472.png",
       price: "429.00",
@@ -804,7 +818,7 @@ export const getData = () => {
       bracelet: "Full pavé",
       color: "Metal bracelet",
       dial: "Rose gold tone",
-      id: "Rose-gold tone PVD - Swarovski",
+      id: "5547614",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_1.0,f_auto,w_500/5547614_png/cocktail-%E8%85%95%E8%A1%A8--%E9%95%B6%E5%B5%8C--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E7%8E%AB%E7%91%B0%E9%87%91%E8%89%B2%E8%B0%83---%E7%8E%AB%E7%91%B0%E9%87%91%E8%89%B2%E8%B0%83-pvd-swarovski-5547614.png",
       price: "429.00",
@@ -881,7 +895,7 @@ export const getData = () => {
       bracelet: "Full pavé",
       color: "Metal bracelet",
       dial: "Silver tone",
-      id: "Stainless steel - Swarovski",
+      id: "5547617",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5547617_png/cocktail-%E8%85%95%E8%A1%A8--%E9%95%B6%E5%B5%8C--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E9%93%B6%E8%89%B2--%E4%B8%8D%E9%94%88%E9%92%A2-swarovski-5547617.png",
       price: "379.00",
