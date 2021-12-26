@@ -290,7 +290,7 @@ export const getData = () => {
       bracelet: "Metal bracelet",
       color: "Blue PVD - Swarovski",
       dial: "",
-      id: "5610475"
+      id: "5610475",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_1.0,f_auto,w_500/5610475_png/octea-lux-sport-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E8%93%9D%E8%89%B2-pvd-swarovski-5610475.png",
       price: "429.00",
@@ -323,7 +323,7 @@ export const getData = () => {
       bracelet: "Metal bracelet",
       color: "Black PVD - Swarovski",
       dial: "Black PVD",
-      id: "5610472"
+      id: "5610472",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_1.0,f_auto,w_500/5610472_png/octea-lux-sport-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E9%BB%91%E8%89%B2-pvd-%E7%94%B5%E9%95%80-swarovski-5610472.png",
       price: "429.00",
