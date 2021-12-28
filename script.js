@@ -1,6 +1,7 @@
 import { getData } from "./data.js";
 
-const data = getData();
+// const data = getData();
+// console.log(data);
 
 // Search by id
 function  getById(id) {

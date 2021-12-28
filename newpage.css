@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #757575;
+  --back-color: #f0eee4;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+.main {
+  height: 100vh;
+  background: var(--back-color);
+}
+
+/* top part ONE*/
+.layer-one {
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.layer-one p {
+  margin-top: 10px;
+}
+.layer-one a {
+  color: white;
+  font-size: 0.75rem;
+  margin: 0 10px;
+}
+/* top part TWO*/
+.layer-two a {
+  display: block;
+  text-decoration: none;
+  margin: 5px 20px;
+  font-size: 15px;
+  color: var(--main-color);
+}
+/* /* top part THREE*/
+.layer-three {
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  color: var(--main-color);
+}
+.three-left,
+.three-right,
+.three-center {
+  display: flex;
+  margin: 15px 15px 0 15px;
+}
+.three-left i,
+.three-right i {
+  margin: 0 20px;
+}
+/* top part FOUR*/
+.layer-four {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+/* top part FIVE*/
+.layer-five {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 70px;
+}
+.layer-five a {
+  color: black;
+  text-decoration: none;
+}
+.layer-five a:hover {
+  border-bottom: 5px solid black;
+  color: black;
+}
+/* top part SIX*/
+.six-links {
+  margin-left: 100px;
+}
+.six-links a {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+.six-links a:nth-child(-n + 2) {
+  border-right: 1px solid black;
+}
+.six-links h1 {
+  margin: 20px 10px;
+}
+.six-links p {
+  font-size: small;
+  margin-left: 10px;
+}
+
+.dropdown-item {
+  font-size: smaller;
+}
+.dropdown-menu button {
+  margin: 0 10px;
+}
+.close-btn {
+  padding: 10px;
+  width: 150px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid black;
+}
+.close-btn:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s ease;
+}
+.checkbox {
+  font-size: smaller;
+  padding: 10px;
+}
+.checkbox span {
+  margin-left: 10px;
+}
+.dropWatch {
+  /* visibility: hidden; */
+}
