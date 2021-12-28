@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@500&family=Poppins:wght@200;300;400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@500&family=Poppins:wght@200;300;400;700&display=swap");
 
 * {
   margin: 0;
@@ -7,8 +6,7 @@
   box-sizing: border-box;
 }
 :root {
-  --beige-color: #F0EEE4;;
-/
+  --beige-color: #f0eee4;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -110,9 +108,7 @@ header:before {
   margin: 0;
 }
 
-
 /* HOVER ON HOVER-CONTAINER IS NOT WORKING, FIX IT IF YOU CAN */
-
 
 section {
   position: absolute;
@@ -144,23 +140,24 @@ section h1 {
   color: white;
 }
 
-.navbar a, .dropbtn {
+.navbar a,
+.dropbtn {
   margin: 30px;
   font-size: 16px;
   color: white;
   text-decoration: none;
 }
 
-
 /* DROPDOWN STYLING */
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover,
+.dropdown:hover .dropbtn {
   color: black;
   border-bottom: 5px solid black;
 }
 
 .dropdown-content {
-  display: none; 
+  display: none;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -183,24 +180,24 @@ section h1 {
 /* columns styling */
 .column {
   padding: 40px 20px;
-  color: black
+  color: black;
 }
 .collection {
   background-color: rgb(238, 238, 234);
   margin: 0 10px;
   padding: 40px;
-
 }
-.column-img{
+.column-img {
   width: 300px;
 }
-.column p, .column h4, .column a {
+.column p,
+.column h4,
+.column a {
   padding: 10px 0;
   color: black;
   font-size: 14px;
   margin: 10px 0;
 }
-
 
 @media only screen and (max-width: 950px) {
   .top2,
