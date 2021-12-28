@@ -20,13 +20,14 @@ body {
   top: 0;
   width: 100%;
   height: 5%;
+  padding: 5px;
   background-color: black;
   color: white;
-  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  /* z-index: 2; */
 }
 
 .top1 a {
@@ -36,10 +37,10 @@ body {
 }
 header {
   background-image: url("https://asset.swarovski.com/images/dpr_auto,f_auto,q_auto/c_crop,g_xy_center,w_7093,h_3990,x_4039,y_1995/w_1920,h_880,c_fill/swa-cms/B2C_BRAND_VISUAL-HOLIDAY-DECO-TREE-2_SL_GL_300DPI_RGB/B2C_BRAND_VISUAL-HOLIDAY-DECO-TREE-2_SL_GL_300DPI_RGB.tif_GL_TT_HP_LD.jpg");
-  background-position: center;
+  background-position: contain;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
+  height: 95vh;
   color: white;
   position: absolute;
   width: 100%;
@@ -57,21 +58,28 @@ header:before {
 
 .top2 {
   position: absolute;
-  top: 5%;
+  top: 0;
+  height: 5%;
   width: 100%;
-  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
   background-color: black;
   opacity: 0.75;
   font-size: 0.9rem;
 }
+
 .top3 {
   width: 100%;
-  display: flex;
-  position: absolute;
   top: 10%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  position: absolute;
   justify-content: space-between;
   color: white;
   padding: 0 10px;
+  z-index: 4;
 }
 
 .top3-left,
@@ -95,41 +103,41 @@ header:before {
   font-size: 0.9rem;
   padding: 0 10px;
 }
+
+.hover-container {
+  position: absolute;
+  top: 5%;
+  z-index: 3;
+  width: 100%;
+  height: 45%;
+}
+
 .logo-container {
   position: absolute;
-  width: 100%;
-  top: 15%;
-  padding: 30px;
+  top: 10%;
+  background-image: url("https://www.swarovski.com/_ui/responsive/theme-swarovski/images/icons/swa-brandlogo-icon-big-white.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  width: 96%;
+  height: 100%;
+  margin: 40px;
 }
-.logo {
-  width: 100%;
-}
-.hover-container {
-  margin: 0;
+.logo-container:hover {
+  background-image: url("https://www.swarovski.com/_ui/responsive/theme-swarovski/images/icons/swa-brandlogo-icon-big-dark.svg");
 }
 
-/* HOVER ON HOVER-CONTAINER IS NOT WORKING, FIX IT IF YOU CAN */
-
-section {
-  position: absolute;
-  top: 91%;
-  width: 100%;
-  height: 17rem;
+.hover-container:hover {
   background-color: var(--beige-color);
-  padding: 20px;
-  text-align: center;
 }
-section h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.75rem;
-  letter-spacing: 7px;
-  padding: 20px;
+.hover-container:hover .logo-container {
+  background-image: url("https://www.swarovski.com/_ui/responsive/theme-swarovski/images/icons/swa-brandlogo-icon-big-dark.svg");
 }
 
 /* NAVBAR STYLING */
 .navbar {
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 0;
   width: 100%;
   margin: 20px;
@@ -138,6 +146,7 @@ section h1 {
   justify-content: center;
   align-items: center;
   color: white;
+  z-index: 10;
 }
 
 .navbar a,
@@ -146,6 +155,13 @@ section h1 {
   font-size: 16px;
   color: white;
   text-decoration: none;
+}
+
+.hover-container:hover .top3 {
+  color: black;
+}
+.hover-container:hover .navbar a {
+  color: black;
 }
 
 /* DROPDOWN STYLING */
@@ -157,7 +173,7 @@ section h1 {
 }
 
 .dropdown-content {
-  display: none; 
+  display: none;
   /* display: flex; */
   justify-content: center;
   position: absolute;
@@ -197,6 +213,51 @@ section h1 {
   color: black;
   font-size: 14px;
   margin: 10px 0;
+}
+
+/* BUTTONS STYLING */
+button {
+  border-style: none;
+  background-color: transparent;
+  color: black;
+  height: 50px;
+  pointer-events: stroke;
+}
+.fa-chevron-left {
+  font-size: 50px;
+  position: absolute;
+  z-index: 150;
+  color: rgb(142, 142, 142);
+  opacity: 0.8;
+  top: 70%;
+  left: 1%;
+}
+.fa-chevron-right {
+  font-size: 50px;
+  position: absolute;
+  z-index: 150;
+  color: rgb(142, 142, 142);
+  opacity: 0.8;
+  top: 70%;
+  right: 1%;
+}
+
+/* SECTION STYLING */
+
+section {
+  position: absolute;
+  top: 91%;
+  width: 100%;
+  height: 17rem;
+  background-color: var(--beige-color);
+  padding: 20px;
+  text-align: center;
+}
+section h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  letter-spacing: 7px;
+  padding: 20px;
 }
 
 @media only screen and (max-width: 950px) {
