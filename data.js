@@ -56,9 +56,9 @@ export const getData = () => {
     },
     {
       name: "octea lux watch",
-      bracelet: "moon",
-      color: "leather strap",
-      dial: "blue",
+      bracelet: "leather strap",
+      color: "blue",
+      dial: "stainless steel - swarovski",
       id: "5516305",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_1.0,f_auto,w_400/5516305_png/octea-lux-%E8%85%95%E8%A1%A8--%E6%9C%88%E4%BA%AE--%E7%9C%9F%E7%9A%AE%E8%A1%A8%E5%B8%A6--%E8%93%9D%E8%89%B2--%E4%B8%8D%E9%94%88%E9%92%A2-swarovski-5516305.png",
@@ -476,7 +476,7 @@ export const getData = () => {
       name: "octea lux sport watch",
       bracelet: "metal bracelet",
       color: "blue pvd - swarovski",
-      dial: "",
+      dial: "stainless steel - swarovski",
       id: "5610475",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5610475_png/octea-lux-sport-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E8%93%9D%E8%89%B2-pvd-swarovski-5610475.png",
@@ -542,7 +542,7 @@ export const getData = () => {
       name: "octea lux sport watch",
       bracelet: "metal bracelet",
       color: "black pvd - swarovski",
-      dial: "",
+      dial: "stainless steel - swarovski",
       id: "5610472",
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5610472_png/octea-lux-sport-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E9%BB%91%E8%89%B2-pvd-%E7%94%B5%E9%95%80-swarovski-5610472.png",
@@ -1119,7 +1119,7 @@ export const getData = () => {
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5519450_png/crystalline-aura-%E8%85%95%E8%A1%A8--%E7%9C%9F%E7%9A%AE%E8%A1%A8%E5%B8%A6--%E7%81%B0%E8%89%B2--%E7%8E%AB%E7%91%B0%E9%87%91%E8%89%B2%E8%B0%83-pvd-swarovski-5519450.png",
       price: "329.00",
-      isInStock: false
+      isInStock: false,
     },
     {
       name: "crystalline glam watch",
@@ -1130,7 +1130,7 @@ export const getData = () => {
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5452468_png/crystalline-glam-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E7%81%B0%E8%89%B2--%E4%B8%8D%E9%94%88%E9%92%A2-swarovski-5452468.png",
       price: "209.00",
-      isInStock: false
+      isInStock: false,
     },
     {
       name: "cosmopolitan watch",
@@ -1141,7 +1141,7 @@ export const getData = () => {
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5517803_png/cosmopolitan-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E7%8E%AB%E7%91%B0%E9%87%91%E8%89%B2%E8%B0%83---%E7%8E%AB%E7%91%B0%E9%87%91%E8%89%B2%E8%B0%83-pvd-swarovski-5517803.png",
       price: "279.00",
-      isInStock: false
+      isInStock: false,
     },
     {
       name: "cocktail watch",
@@ -1152,7 +1152,7 @@ export const getData = () => {
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5547614_png/cocktail-%E8%85%95%E8%A1%A8--%E9%95%B6%E5%B5%8C--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E7%8E%AB%E7%91%B0%E9%87%91%E8%89%B2%E8%B0%83---%E7%8E%AB%E7%91%B0%E9%87%91%E8%89%B2%E8%B0%83-pvd-swarovski-5547614.png",
       price: "429.00",
-      isInStock: false
+      isInStock: false,
     },
     {
       name: "crystal flower watch",
@@ -1163,7 +1163,7 @@ export const getData = () => {
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5552421_png/crystal-flower-%E8%85%95%E8%A1%A8--%E7%9C%9F%E7%9A%AE%E8%A1%A8%E5%B8%A6--%E9%BB%91%E8%89%B2-swarovski-5552421.png",
       price: "209.00",
-      isInStock: false
+      isInStock: false,
     },
     {
       name: "cosmic rock watch",
@@ -1174,7 +1174,7 @@ export const getData = () => {
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5376071_png/cosmic-rock-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E9%BB%91%E8%89%B2--%E9%BB%91%E8%89%B2-pvd-%E7%94%B5%E9%95%80-swarovski-5376071.png",
       price: "197.00",
-      isInStock: false
+      isInStock: false,
     },
     {
       name: "cosmopolitan watch",
@@ -1185,7 +1185,7 @@ export const getData = () => {
       imageSrc:
         "https://asset.swarovski.com/images/$size_610/t_swa103/b_rgb:ffffff,c_scale,dpr_auto,f_auto,w_auto/5547646_png/cosmopolitan-%E8%85%95%E8%A1%A8--%E9%87%91%E5%B1%9E%E6%89%8B%E9%93%BE--%E9%BB%91%E8%89%B2--%E9%BB%91%E8%89%B2-pvd-%E7%94%B5%E9%95%80-swarovski-5547646.png",
       price: "199.00",
-      isInStock: false
-    }
-];
+      isInStock: false,
+    },
+  ];
 };
