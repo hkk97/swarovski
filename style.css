@@ -141,7 +141,7 @@ header:before {
   left: 0;
   width: 100%;
   margin: 20px;
-  padding: 40px 0px;
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,7 +151,7 @@ header:before {
 
 .navbar a,
 .dropbtn {
-  margin: 30px;
+  padding: 20px;
   font-size: 16px;
   color: white;
   text-decoration: none;
@@ -262,7 +262,7 @@ section h1 {
 
 @media only screen and (max-width: 950px) {
   .top2,
-  .top3 {
+  .top3,
+  .navbar {
     display: none;
   }
-}
