@@ -95,20 +95,8 @@
               d-flex
               justife-content-around
               navbar-light
-              bg-light
             "
           >
-            <!-- <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button> -->
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <!-- 1 -->
@@ -260,12 +248,12 @@
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <input type="text" id="input" placeholder="Search for watches...">
-                  <button id="search-btn">Search</button>
+                <li class="nav-item d-flex">
+                  <input class="form-control me-2" type="search" id="input" placeholder="Search for watches...">
+                  <button class="btn btn-outline-success" id="search-btn">Search</button>
                 </li>
-                <li>
-                  <button id="viewAll-btn">View all watches</button>
+                <li class="nav-item d-flex">
+                  <button class="btn btn-outline-success" id="viewAll-btn">View all watches</button>
                 </li>
               </ul>
             </div>
