@@ -5,7 +5,7 @@ const data = getData();
 
 //VARIABLES
 const container = document.querySelector(".container");
-const bracelet = document.querySelector("#categories");
+// const bracelet = document.querySelector("#categories");
 const material = document.querySelector("#material");
 const color = document.querySelector("#color");
 const price = document.querySelector("#price");
@@ -14,6 +14,39 @@ const gold = document.querySelector("#gold");
 const input = document.querySelector("#input");
 const searchBtn = document.querySelector("#search-btn");
 const viewAllBtn = document.querySelector("#viewAll-btn");
+
+//categories links
+const braceletOptions = document.querySelector("#bracelet-options");
+const leatherBracelet = document.querySelector("#leather-bracelet");
+const fullpaveBracelet = document.querySelector("#fullpave-bracelet");
+const milaneseBracelet = document.querySelector("#milanese-bracelet");
+const metalBracelet = document.querySelector("#metal-bracelet");
+
+//EVENT LISTENERS
+//search by input
+searchBtn.addEventListener("click", searchWatches);
+viewAllBtn.addEventListener("click", resetDisplay);
+
+//search by bracelet
+leatherBracelet.addEventListener("click", getLeatherBracelet);
+fullpaveBracelet.addEventListener("click", getFullpaveBracelet);
+milaneseBracelet.addEventListener("click", getMilaneseBracelet);
+metalBracelet.addEventListener("click", getMetalBracelet);
+
+//HELPER FUNCTIONS
+//function to clear the container
+const clearContainer = function () {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+};
+
+//Function to reset after searching watches
+function resetDisplay(arr) {
+  input.value = "";
+  clearContainer();
+  displayWatches(data);
+}
 
 //Function to display all watches
 const displayWatches = function (arr) {
@@ -31,12 +64,11 @@ const displayWatches = function (arr) {
 };
 displayWatches(data); //calling this function to display all watches from the very beginning
 
+//MAIN FUNCTIONS
 // Function to display watches filtered by search input
 function searchWatches(element, inputValue) {
   // removing all objects(watches) from the container:
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
-  }
+  clearContainer();
   //creating a new array, which will hold objects(watches) meeting the search input
   let filteredArray = [];
   const inputText = input.value.toLowerCase().split(" ");
@@ -59,39 +91,88 @@ function searchWatches(element, inputValue) {
   return displayWatches(filteredArray);
 }
 
-//Function to display all watches
-function resetDisplay(arr) {
-  input.value = "";
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
+// Search by category(bracelet)
+function getLeatherBracelet(bracelet) {
+  clearContainer();
+  let filteredArray = [];
+  let leatherBraceletType = leatherBracelet.textContent.toLowerCase();
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].bracelet.includes(leatherBraceletType))
+      filteredArray.push(data[i]);
   }
-  displayWatches(data);
+  return displayWatches(filteredArray);
+}
+function getFullpaveBracelet(bracelet) {
+  clearContainer();
+  let filteredArray = [];
+  let fullpaveBraceletType = fullpaveBracelet.textContent.toLowerCase();
+  console.log(fullpaveBraceletType);
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].bracelet.includes(fullpaveBraceletType))
+      filteredArray.push(data[i]);
+  }
+  return displayWatches(filteredArray);
+}
+function getMilaneseBracelet(bracelet) {
+  clearContainer();
+  let filteredArray = [];
+  let milaneseBraceletType = milaneseBracelet.textContent.toLowerCase();
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].bracelet.includes(milaneseBraceletType))
+      filteredArray.push(data[i]);
+  }
+  return displayWatches(filteredArray);
+}
+function getMetalBracelet(bracelet) {
+  clearContainer();
+  let filteredArray = [];
+  let metalBraceletType = metalBracelet.textContent.toLowerCase();
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].bracelet.includes(metalBraceletType))
+      filteredArray.push(data[i]);
+  }
+  return displayWatches(filteredArray);
 }
 
-//EVENT LISTENERS
-searchBtn.addEventListener("click", searchWatches);
-viewAllBtn.addEventListener("click", resetDisplay);
-
-// // Search by id
-// function getById(id) {
-//   return data.find((watch) => watch.id === id);
-// }
-
-// // Search by name
-// function getByName(name) {
-//   let lowcaseName = name.toLowerCase();
-//   return data.filter((watch) => watch.name.includes(lowcaseName));
-// }
-
-// Serch by bracelet
-// function getByBracelet(bracelet) {
-//   let lowcaseBracelet = bracelet.toLowerCase();
-//   return data.filter((watch) => {
-//     if(watch.bracelet.includes(lowcaseBracelet)){
-
-//     }
-//   });
-// }
+// - - - tried using switch for bracelet types, but cannot finish it -----//
+const filterByBracelet = (event) => {
+  clearContainer();
+  const options = braceletOptions.childNodes; // returns children of braceletOptions: LIs, inside which are a tags, inside which there is a text with bracelet name. I dont know how to select the text - we need to put it inside braceletType
+  console.log(options);
+  let braceletType = options.textContent; // ???
+  console.log(braceletType); // currently shows undefined
+  let filteredArray = [];
+  switch (event.target.value) {
+    case "leather bracelet":
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].bracelet.includes(braceletType))
+          filteredArray.push(data[i]);
+      }
+      break;
+    case "fullpave bracelet":
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].bracelet.includes(braceletType))
+          filteredArray.push(data[i]);
+      }
+      break;
+    case "milanese bracelet":
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].bracelet.includes(braceletType))
+          filteredArray.push(data[i]);
+      }
+      break;
+    case "metal bracelet":
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].bracelet.includes(braceletType))
+          filteredArray.push(data[i]);
+      }
+      break;
+  }
+  return displayWatches(filteredArray);
+};
 
 // // Search by color
 // function getByColor(color) {
@@ -104,6 +185,17 @@ viewAllBtn.addEventListener("click", resetDisplay);
 // function getByDial(dial) {
 //   let lowcaseDial = dial.toLowerCase();
 //   return data.filter((watch) => watch.dial.includes(lowcaseDial));
+// }
+
+// // Search by id
+// function getById(id) {
+//   return data.find((watch) => watch.id === id);
+// }
+
+// // Search by name
+// function getByName(name) {
+//   let lowcaseName = name.toLowerCase();
+//   return data.filter((watch) => watch.name.includes(lowcaseName));
 // }
 
 // // Gets all in stock

@@ -892,7 +892,7 @@ export const getData = () => {
     },
     {
       name: "cocktail watch",
-      bracelet: "full pavé",
+      bracelet: "full pave",
       color: "metal bracelet",
       dial: "silver",
       id: "5547617",
@@ -1145,7 +1145,7 @@ export const getData = () => {
     },
     {
       name: "cocktail watch",
-      bracelet: "full pavé",
+      bracelet: "full pave",
       color: "metal bracelet",
       dial: "rose gold",
       id: "5547614",
