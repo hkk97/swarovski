@@ -169,3 +169,9 @@ body {
 .dropWatch {
   /* visibility: hidden; */
 }
+/* colors */
+#gold-color {
+  width: 40px;
+  height: 40px;
+  background-image: linear-gradient(yellow, pink);
+}

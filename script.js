@@ -22,6 +22,12 @@ const fullpaveBracelet = document.querySelector("#fullpave-bracelet");
 const milaneseBracelet = document.querySelector("#milanese-bracelet");
 const metalBracelet = document.querySelector("#metal-bracelet");
 
+// material dropdown checkbox
+const materialOption= document.querySelector("#material-for-watch")
+const roseGoldOption= document.querySelector("#rose-gold")
+const champagneGoldOption= document.querySelector("#champagne-gold")
+const stainlessGoldOption= document.querySelector("#stainless-gold")
+
 //EVENT LISTENERS
 //search by input
 searchBtn.addEventListener("click", searchWatches);
@@ -32,6 +38,11 @@ leatherBracelet.addEventListener("click", getLeatherBracelet);
 fullpaveBracelet.addEventListener("click", getFullpaveBracelet);
 milaneseBracelet.addEventListener("click", getMilaneseBracelet);
 metalBracelet.addEventListener("click", getMetalBracelet);
+/// search by material
+roseGoldOption.addEventListener("change", getRoseGold);
+champagneGoldOption.addEventListener("change", getChampGold);
+stainlessGoldOption.addEventListener("change", getStainSteel);
+
 
 //HELPER FUNCTIONS
 //function to clear the container
@@ -136,6 +147,51 @@ function getMetalBracelet(bracelet) {
   }
   return displayWatches(filteredArray);
 }
+//Functions for selecting based on material type
+
+function getRoseGold() {
+
+  clearContainer();
+  let filteredArray = [];
+  let goldMaterial = roseGoldOption.value.toLowerCase();
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].dial.includes(goldMaterial))
+      filteredArray.push(data[i]);
+  }
+  return displayWatches(filteredArray);
+}
+function getChampGold() {
+  
+  clearContainer();
+  let filteredArray = [];
+  let goldMaterial = champagneGoldOption.value.toLowerCase();
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].dial.includes(goldMaterial))
+      filteredArray.push(data[i]);
+  }
+  return displayWatches(filteredArray);
+}
+function getStainSteel() {
+ 
+  clearContainer();
+  let filteredArray = [];
+  let goldMaterial = stainlessGoldOption.value.toLowerCase();
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].dial.includes(goldMaterial))
+      filteredArray.push(data[i]);
+  }
+  return displayWatches(filteredArray);
+}
+
+
+
+
+
+
+
 
 // - - - tried using switch for bracelet types, but cannot finish it -----//
 const filterByBracelet = (event) => {
