@@ -66,6 +66,7 @@ function displayWatches(arr) {
             </div>`;
     container.appendChild(cardDiv);
   });
+  input.value = "";
 }
 displayWatches(data); //calling this function to display all watches from the very beginning
 
