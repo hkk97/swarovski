@@ -17,8 +17,22 @@ body {
   background: var(--back-color);
 }
 
-/* WATCHES CARD BEGINNING */
+/* SEARCHING PART BEGIN */
+.search-bar {
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  margin: 0 20px;
+  font-size: 20px;
+}
+/* SEARCHING PART END */
+
+/* WATCHES CARD BEGIN */
 .container {
+  background: var(--back-color);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
@@ -27,23 +41,25 @@ body {
 .card {
   border: 1px solid red;
   width: 100%;
-  /* max-height: 400px; */
   height: 400px;
   background-color: #fff;
   position: relative;
+  align-items: center;
 }
 
 .watch-image {
   position: absolute;
-  width: 100%;
-  height: 70%;
+  top: 20px;
+  width: 90%;
+  max-width: 280px;
 }
 
 .watch-info {
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 70%;
+  bottom: 15px;
+  text-transform: capitalize;
 }
 
 .watch-info p {
@@ -51,9 +67,50 @@ body {
 }
 
 .watch-name {
-  text-transform: capitalize;
+  font-weight: bold;
+  font-size: large;
+}
+
+.watch-price {
+  font-size: 18px;
 }
 /* WATCHES CARD END */
+
+/* RIBBON BEGIN */
+.ribbon {
+  background-color: #a00;
+  overflow: hidden;
+  white-space: nowrap;
+  /* top left corner */
+  position: absolute;
+  left: -26px;
+  top: 40px;
+  /* for 45 deg rotation */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* for creating shadow */
+  -webkit-box-shadow: 0 0 10px #888;
+  -moz-box-shadow: 0 0 10px #888;
+  box-shadow: 0 0 10px #888;
+  z-index: 5;
+}
+
+.ribbon p {
+  border: 1px solid #faa;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  margin: 1px 0;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  /* for creating shadow */
+  text-shadow: 0 0 5px #444;
+}
+/* RIBBON END */
 
 /* top part ONE*/
 .layer-one {
@@ -169,6 +226,7 @@ body {
 .dropWatch {
   /* visibility: hidden; */
 }
+
 /* colors */
 #gold-color {
   width: 35px;
@@ -223,4 +281,12 @@ body {
 .spans {
   cursor: pointer;
   vertical-align: top;
+}
+
+@media only screen and (max-width: 1000px){
+  .container {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
+  }
+
 }

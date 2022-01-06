@@ -83,8 +83,9 @@ function resetDisplay(arr) {
 const displayWatches = function (arr) {
   arr.forEach((el) => {
     const cardDiv = document.createElement("div");
+    const ribbonDiv = el.isInStock ? "" : "<div class='ribbon'><p>Sold Out!</p></div>"
     cardDiv.classList.add("card");
-    cardDiv.innerHTML = `<img class="watch-image" src=${el.imageSrc} alt="">
+    cardDiv.innerHTML = `${ribbonDiv}<img class="watch-image" src=${el.imageSrc} alt="">
       <div class="watch-info">
               <p class="watch-name">${el.name}</p>
               <p class="watch-detail">${el.bracelet}, ${el.dial}</p>
