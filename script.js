@@ -16,11 +16,7 @@ const searchBtn = document.querySelector("#search-btn");
 const viewAllBtn = document.querySelector("#viewAll-btn");
 
 //categories links
-const braceletOptions = document.querySelector("#bracelet-options");
-const leatherBracelet = document.querySelector("#leather-bracelet");
-const fullpaveBracelet = document.querySelector("#fullpave-bracelet");
-const milaneseBracelet = document.querySelector("#milanese-bracelet");
-const metalBracelet = document.querySelector("#metal-bracelet");
+const allCategories = document.querySelectorAll(".bracelet")
 
 // material dropdown checkbox
 const roseGoldOption= document.querySelector("#rose-gold")
@@ -63,6 +59,10 @@ greenColor.addEventListener("click",getGreenColor)
 whiteColor.addEventListener("click",getWhiteColor)
 silverColor.addEventListener("click",getSilverColor)
 grayColor.addEventListener("click",getGrayColor)
+
+allCategories.forEach(category => {
+  category.addEventListener("click", searchByBracelet)
+})
 
 //HELPER FUNCTIONS
 //function to clear the container
@@ -123,51 +123,7 @@ function searchWatches(element, inputValue) {
   return displayWatches(filteredArray);
 }
 
-// Search by category(bracelet)
-function getLeatherBracelet(bracelet) {
-  clearContainer();
-  let filteredArray = [];
-  let leatherBraceletType = leatherBracelet.textContent.toLowerCase();
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].bracelet.includes(leatherBraceletType))
-      filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getFullpaveBracelet(bracelet) {
-  clearContainer();
-  let filteredArray = [];
-  let fullpaveBraceletType = fullpaveBracelet.textContent.toLowerCase();
-  console.log(fullpaveBraceletType);
 
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].bracelet.includes(fullpaveBraceletType))
-      filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getMilaneseBracelet(bracelet) {
-  clearContainer();
-  let filteredArray = [];
-  let milaneseBraceletType = milaneseBracelet.textContent.toLowerCase();
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].bracelet.includes(milaneseBraceletType))
-      filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getMetalBracelet(bracelet) {
-  clearContainer();
-  let filteredArray = [];
-  let metalBraceletType = metalBracelet.textContent.toLowerCase();
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].bracelet.includes(metalBraceletType))
-      filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
 //Functions for selecting based on material type
 
 function getRoseGold() {
@@ -308,48 +264,18 @@ function getGrayColor() {
   return displayWatches(filteredArray);
 }
 
-
-
-
-
-
-
-// - - - tried using switch for bracelet types, but cannot finish it -----//
-const filterByBracelet = (event) => {
-  clearContainer();
-  const options = braceletOptions.childNodes; // returns children of braceletOptions: LIs, inside which are a tags, inside which there is a text with bracelet name. I dont know how to select the text - we need to put it inside braceletType
-  console.log(options);
-  let braceletType = options.textContent; // ???
-  console.log(braceletType); // currently shows undefined
-  let filteredArray = [];
-  switch (event.target.value) {
-    case "leather bracelet":
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].bracelet.includes(braceletType))
-          filteredArray.push(data[i]);
-      }
-      break;
-    case "fullpave bracelet":
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].bracelet.includes(braceletType))
-          filteredArray.push(data[i]);
-      }
-      break;
-    case "milanese bracelet":
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].bracelet.includes(braceletType))
-          filteredArray.push(data[i]);
-      }
-      break;
-    case "metal bracelet":
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].bracelet.includes(braceletType))
-          filteredArray.push(data[i]);
-      }
-      break;
-  }
-  return displayWatches(filteredArray);
-};
+ // Search by category(bracelet)
+ function searchByBracelet() {
+   const filteredArray = [];
+   const braceletCategory = this.id.split("-")[0]; // get clicked id and split it to get exact bracelet type
+   for(let i = 0; i < data.length; i++) {
+     if (data[i].bracelet.includes(braceletCategory)) {
+       filteredArray.push(data[i])
+     }
+   }
+   clearContainer();
+   return displayWatches(filteredArray);
+ }
 
 // // Search by color
 // function getByColor(color) {
