@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@500&family=Poppins:wght@200;300;400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,15 @@ body {
 .main {
   height: 70vh;
   background: var(--back-color);
+}
+
+.layer-six h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+}
+.layer-six a:hover {
+  color: black;
 }
 
 /* SEARCHING PART BEGIN */
@@ -139,7 +149,7 @@ body {
   font-size: 15px;
   color: var(--main-color);
 }
-/* /* top part THREE*/
+/* top part THREE*/
 .layer-three {
   display: flex;
   justify-content: space-between;
@@ -227,7 +237,7 @@ body {
   /* visibility: hidden; */
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1000px) {
   .container {
     /* display: grid; */
     grid-template-columns: 1fr 1fr;
