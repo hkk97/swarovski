@@ -227,9 +227,66 @@ body {
   /* visibility: hidden; */
 }
 
+/* colors */
+#gold-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(yellow, pink);
+}
+#red-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(red, pink);
+}
+#roseGold-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(white, pink);
+}
+#pink-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(pink, purple);
+}
+#black-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(black, black);
+}
+#blue-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(blue, white);
+}
+#green-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(green, white);
+}
+#white-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(white, white);
+}
+#silver-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(lightgrey, grey);
+}
+#gray-color {
+  width: 35px;
+  height: 20px;
+  background-image: linear-gradient(gray, gray);
+}
+.spans {
+  cursor: pointer;
+  vertical-align: top;
+}
+
 @media only screen and (max-width: 1000px){
   .container {
     /* display: grid; */
     grid-template-columns: 1fr 1fr;
   }
+
 }
