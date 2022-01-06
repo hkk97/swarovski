@@ -5,73 +5,44 @@ const data = getData();
 
 //VARIABLES
 const container = document.querySelector(".container");
-// const bracelet = document.querySelector("#categories");
-const material = document.querySelector("#material");
-const color = document.querySelector("#color");
-const price = document.querySelector("#price");
-const gold = document.querySelector("#gold");
-
 const input = document.querySelector("#input");
 const searchBtn = document.querySelector("#search-btn");
 const viewAllBtn = document.querySelector("#viewAll-btn");
 
-//categories links
+//filtering options
 const allCategories = document.querySelectorAll(".bracelet");
-
-// material dropdown checkbox
-const roseGoldOption = document.querySelector("#rose-gold");
-const champagneGoldOption = document.querySelector("#champagne-gold");
-const stainlessGoldOption = document.querySelector("#stainless-gold");
-//color options
-const goldColor = document.querySelector("#gold");
-const redColor = document.querySelector("#red");
-const roseGoldColor = document.querySelector("#rosegold");
-const pinkColor = document.querySelector("#pink");
-const blackColor = document.querySelector("#black");
-const blueColor = document.querySelector("#blue");
-const greenColor = document.querySelector("#green");
-const whiteColor = document.querySelector("#white");
-const silverColor = document.querySelector("#silver");
-const grayColor = document.querySelector("#gray");
+const allMaterials = document.querySelectorAll(".material");
+const allColors = document.querySelectorAll(".color");
 
 //EVENT LISTENERS
 //search by input
 searchBtn.addEventListener("click", searchWatches);
+
+//view all watches
 viewAllBtn.addEventListener("click", resetDisplay);
 
 //search by bracelet
-// leatherBracelet.addEventListener("click", getLeatherBracelet);
-// fullpaveBracelet.addEventListener("click", getFullpaveBracelet);
-// milaneseBracelet.addEventListener("click", getMilaneseBracelet);
-// metalBracelet.addEventListener("click", getMetalBracelet);
-/// search by material
-roseGoldOption.addEventListener("change", getRoseGold);
-champagneGoldOption.addEventListener("change", getChampGold);
-stainlessGoldOption.addEventListener("change", getStainSteel);
-// search by colors
-goldColor.addEventListener("click", getGoldColor);
-redColor.addEventListener("click", getRedColor);
-roseGoldColor.addEventListener("click", getRoseGoldColor);
-pinkColor.addEventListener("click", getPinkColor);
-blackColor.addEventListener("click", getBlackColor);
-blueColor.addEventListener("click", getBlueColor);
-greenColor.addEventListener("click", getGreenColor);
-whiteColor.addEventListener("click", getWhiteColor);
-silverColor.addEventListener("click", getSilverColor);
-grayColor.addEventListener("click", getGrayColor);
-
 allCategories.forEach((category) => {
   category.addEventListener("click", searchByBracelet);
 });
 
+//search by color
+allColors.forEach((color) => {
+  color.addEventListener("click", searchByColor);
+});
+
+//search by material
+allMaterials.forEach((material) => {
+  material.addEventListener("change", searchByMaterial);
+});
+
 //HELPER FUNCTIONS
 //function to clear the container
-const clearContainer = function () {
+function clearContainer() {
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
-};
-
+}
 //Function to reset after searching watches
 function resetDisplay(arr) {
   input.value = "";
@@ -80,7 +51,7 @@ function resetDisplay(arr) {
 }
 
 //Function to display all watches
-const displayWatches = function (arr) {
+function displayWatches(arr) {
   arr.forEach((el) => {
     const cardDiv = document.createElement("div");
     const ribbonDiv = el.isInStock
@@ -95,10 +66,11 @@ const displayWatches = function (arr) {
             </div>`;
     container.appendChild(cardDiv);
   });
-};
+}
 displayWatches(data); //calling this function to display all watches from the very beginning
 
 //MAIN FUNCTIONS
+
 // Function to display watches filtered by search input
 function searchWatches(element, inputValue) {
   // removing all objects(watches) from the container:
@@ -108,7 +80,6 @@ function searchWatches(element, inputValue) {
   const inputText = input.value.toLowerCase().split(" ");
 
   //looping through each element(watch) of the Data array and adding matching watches to the new array
-
   for (let i = 0; i < data.length; i++) {
     for (let j = 0; j < inputText.length; j++) {
       if (
@@ -125,178 +96,169 @@ function searchWatches(element, inputValue) {
   return displayWatches(filteredArray);
 }
 
-//Functions for selecting based on material type
-
-function getRoseGold() {
-  clearContainer();
-  let filteredArray = [];
-  let goldMaterial = roseGoldOption.value.toLowerCase();
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].dial.includes(goldMaterial)) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getChampGold() {
-  clearContainer();
-  let filteredArray = [];
-  let goldMaterial = champagneGoldOption.value.toLowerCase();
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].dial.includes(goldMaterial)) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getStainSteel() {
-  clearContainer();
-  let filteredArray = [];
-  let goldMaterial = stainlessGoldOption.value.toLowerCase();
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].dial.includes(goldMaterial)) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-//// function for color
-function getGoldColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("gold")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getRedColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("red")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getRoseGoldColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("rose gold")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getPinkColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("pink")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getBlackColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("black")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getBlueColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("blue")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getGreenColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("green")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getWhiteColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("white")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getSilverColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("silver")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-function getGrayColor() {
-  clearContainer();
-  let filteredArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].color.includes("gray")) filteredArray.push(data[i]);
-  }
-  return displayWatches(filteredArray);
-}
-
 // Search by category(bracelet)
 function searchByBracelet() {
-  const filteredArray = [];
   const braceletCategory = this.id.split("-")[0]; // get clicked id and split it to get exact bracelet type
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].bracelet.includes(braceletCategory)) {
-      filteredArray.push(data[i]);
-    }
-  }
+  const filteredArray = data.filter((el) =>
+    el.bracelet.includes(braceletCategory)
+  );
   clearContainer();
   return displayWatches(filteredArray);
 }
 
-// // Search by color
-// function getByColor(color) {
-//   let lowcaseColor = color.toLowerCase();
-//   console.log(lowcaseColor);
-//   return data.filter((watch) => watch.color.includes(lowcaseColor));
-// }
+//Search by material(dial)
+function searchByMaterial() {
+  const materialType = this.id.split(" "); // get clicked id and split it to get exact bracelet type
+  const filteredArray = data.filter((el) => el.dial.includes(materialType));
+  clearContainer();
+  return displayWatches(filteredArray);
+}
 
-// // Search by dial
-// function getByDial(dial) {
-//   let lowcaseDial = dial.toLowerCase();
-//   return data.filter((watch) => watch.dial.includes(lowcaseDial));
-// }
+//Search by color
+function searchByColor() {
+  const selectedColor = this.id.split("-")[0]; // get clicked id and split it to get exact bracelet type
+  const filteredArray = data.filter((el) => el.color.includes(selectedColor));
+  clearContainer();
+  return displayWatches(filteredArray);
+}
 
-// // Search by id
-// function getById(id) {
-//   return data.find((watch) => watch.id === id);
-// }
+//OLD CODES from Bekzat
+// material dropdown checkbox
+// const roseGoldOption = document.querySelector("#rose-gold");
+// const champagneGoldOption = document.querySelector("#champagne-gold");
+// const stainlessGoldOption = document.querySelector("#stainless-steel");
 
-// // Search by name
-// function getByName(name) {
-//   let lowcaseName = name.toLowerCase();
-//   return data.filter((watch) => watch.name.includes(lowcaseName));
-// }
+//color options
+// const goldColor = document.querySelector("#gold");
+// const redColor = document.querySelector("#red");
+// const roseGoldColor = document.querySelector("#rosegold");
+// const pinkColor = document.querySelector("#pink");
+// const blackColor = document.querySelector("#black");
+// const blueColor = document.querySelector("#blue");
+// const greenColor = document.querySelector("#green");
+// const whiteColor = document.querySelector("#white");
+// const silverColor = document.querySelector("#silver");
+// const grayColor = document.querySelector("#gray");
+//Search by material(dial)
 
-// // Gets all in stock
-// function getAllFromStock() {
-//   return data.filter((watch) => watch.isInStock);
-// }
+// function getRoseGold() {
+//   clearContainer();
+//   let filteredArray = [];
+//   let goldMaterial = roseGoldOption.value.toLowerCase();
 
-// // Search by price range
-// function getByPrice(lowPrice = 0, highPrice = Infinity) {
-//   let newLowPrice = Number(lowPrice);
-//   let newHighPrice = Number(highPrice);
-//   return data.filter((watch) => {
-//     let wPrice = Number(watch.price);
-//     return wPrice >= newLowPrice && wPrice <= newHighPrice;
-//   });
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].dial.includes(goldMaterial)) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getChampGold() {
+//   clearContainer();
+//   let filteredArray = [];
+//   let goldMaterial = champagneGoldOption.value.toLowerCase();
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].dial.includes(goldMaterial)) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getStainSteel() {
+//   clearContainer();
+//   let filteredArray = [];
+//   let goldMaterial = stainlessGoldOption.value.toLowerCase();
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].dial.includes(goldMaterial)) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+//// Search by color
+// function getGoldColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("gold")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getRedColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("red")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getRoseGoldColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("rose gold")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getPinkColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("pink")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getBlackColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("black")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getBlueColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("blue")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getGreenColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("green")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getWhiteColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("white")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getSilverColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("silver")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
+// }
+// function getGrayColor() {
+//   clearContainer();
+//   let filteredArray = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (data[i].color.includes("gray")) filteredArray.push(data[i]);
+//   }
+//   return displayWatches(filteredArray);
 // }
